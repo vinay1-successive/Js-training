@@ -1,12 +1,8 @@
 // 1. Write a program to give a random output between 1 to 10 (AC: 2 simultaneous answers could not be same)
 
+function get_Random() {
+  return Math.round(Math.random() * 10 + 1, 2);
+}
 
-    function get_Random()
-    {
-    let random_num=Math.random()*10+1;
-    console.log(Math.round(random_num,2));
-    }
-
-    get_Random();
-
-
+const random_number = get_Random();
+console.log(random_number);

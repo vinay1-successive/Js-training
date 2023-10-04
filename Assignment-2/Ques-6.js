@@ -5,4 +5,5 @@ function check_even_odd(num)
     return num%2==0?true:false;
 }
 
-console.log(check_even_odd(15));
+const ans=check_even_odd(15);
+console.log(ans);

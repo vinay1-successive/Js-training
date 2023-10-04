@@ -5,4 +5,5 @@ function get_sum(value1,value2)
     return value1+value2;
 }
 
-console.log(get_sum(2,3));
+const sum=get_sum(2,3);
+console.log(sum);
