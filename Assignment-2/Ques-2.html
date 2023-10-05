@@ -6,11 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div></div>
+  </body>
   <script>
-    const first_name = prompt("Enter name: ");
-    const age = prompt("Enter Age: ");
-    const phone = prompt("Enter Phone: ");
-    alert(first_name + " " + age + " " + phone);
+    function validateAge(age) {
+      if (isNaN(age) || age < 1 || age > 100) {
+        alert("Wrong Enter Again!!!");
+        return false;
+      }
+      return true;
+    }
+
+    function validateName(name) {
+      if (first_name.length == 0 || parseInt(first_name)) {
+        alert("Wrong Enter Again!!!");
+        return false;
+      }
+      return true;
+    }
+
+    function validatePhone(age) {
+      if (isNaN(age) || phone < 1111111111 || age > 9999999999) {
+        alert("Wrong Enter Again!!!");
+        return false;
+      }
+      return true;
+    }
+
+    let first_name = prompt("Enter name: ");
+    while (validateName(first_name) != true) {
+      first_name = prompt("Enter name: ");
+    }
+
+    let age = prompt("Enter Age: ");
+    while (validateAge(age) != true) {
+      age = prompt("Enter Age: ");
+    }
+
+    let phone = prompt("Enter Phone: ");
+    while (validatePhone(phone) != true) {
+      phone = prompt("Enter Phone: ");
+    }
+
+    const box = document.querySelector("div");
+    const nameElement = document.createElement("div");
+    nameElement.textContent = "Name: " + first_name;
+    const ageElement = document.createElement("div");
+    ageElement.textContent = "Age: " + age;
+    const phoneElement = document.createElement("div");
+    phoneElement.textContent = "Phone: " + phone;
+
+    box.append(nameElement);
+    box.append(ageElement);
+    box.append(phoneElement);
   </script>
 </html>
