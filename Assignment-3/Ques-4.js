@@ -1,16 +1,17 @@
 // 4. Write a program to print all even number first and then all odd numbers
 
-const generate_Even_Odd = (n) => {
-  for (let i = 1; i <= n; i++) {
-    if (i % 2 == 0) {
-      console.log(i);
+const generateEvenOdd = (n) => {
+  let even = "";
+  let odd = "";
+  new Array(10).fill().forEach((element, index) => {
+    if ((index + 1) % 2 == 0) {
+      even += index + 1 + " ";
+      index++;
+    } else {
+      odd += index + 1 + " ";
     }
-  }
-  for (let i = 1; i <= n; i++) {
-    if (i % 2 != 0) {
-      console.log(i);
-    }
-  }
+  });
+  return even + odd;
 };
-
-generate_Even_Odd(10);
+const ans = generateEvenOdd(10);
+console.log(ans);

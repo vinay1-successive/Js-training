@@ -1,5 +1,5 @@
 // 9. Write a program to print fibonaaci series
-const gen_fibonacii = (number) => {
+const generateFibonacii = (number) => {
   let value1 = 0;
   let value2 = 1;
   let sum = 0;
@@ -13,4 +13,4 @@ const gen_fibonacii = (number) => {
   }
 };
 
-gen_fibonacii(10);
+generateFibonacii(10);

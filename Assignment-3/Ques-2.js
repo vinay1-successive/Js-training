@@ -8,7 +8,7 @@
 const pattern1 = () => {
   let value = 1;
   let lines = 1;
-  while (lines < 5) {
+  while (lines < 5) {  
     let j = 0;
     let ans = "";
     while (j++ < lines) {

@@ -12,7 +12,7 @@
 const Pattern = () => {
   let lines = 1;
   let space = 4;
-  let end = 1;
+  let end = 1; 
   while (lines < 10) {
     let start = end;
 

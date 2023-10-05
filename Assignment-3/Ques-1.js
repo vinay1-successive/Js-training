@@ -5,7 +5,7 @@ const calculator = (value1, value2, operator) => {
     case "+":
       return value1 + value2;
       break;
-    case "-":
+    case "-":  
       return value1 - value2;
       break;
     case "*":

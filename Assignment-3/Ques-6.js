@@ -1,6 +1,6 @@
 // 6. Write a program to display prime numbers from 1 to 50
 
-const generate_Prime = () => {
+const generatePrime = () => {
   for (let number = 1; number <= 50; number++) {
     let count_of_divisors = 0;
 
@@ -15,4 +15,4 @@ const generate_Prime = () => {
   }
 };
 
-generate_Prime();
+generatePrime();
