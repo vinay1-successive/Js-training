@@ -2,7 +2,7 @@
 
 
 var x=-1;
-const get_Random =()=> {
+const getRandom =()=> {
   let number=Math.floor(Math.random()*10+1);
   while(number===x)
   {
@@ -12,6 +12,6 @@ const get_Random =()=> {
   return number;
 }
 
-const random_number1 = get_Random();
-const random_number2 = get_Random();
-console.log(random_number1,random_number2);
+const randomNumber1 = getRandom();
+const randomNumber2 = getRandom();
+console.log(randomNumber1,randomNumber2);
