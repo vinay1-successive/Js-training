@@ -7,7 +7,7 @@ for (let i = 1; i <= 20; i++) {
   ans += i + " ";
   arr.push(i);
 }
-
+ 
 console.log(ans);
 
 //while loop

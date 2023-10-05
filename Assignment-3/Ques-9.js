@@ -1,6 +1,5 @@
 // 9. Write a program to print fibonaaci series
-
-function gen_fibonacii(number) {
+const gen_fibonacii = (number) => {
   let value1 = 0;
   let value2 = 1;
   let sum = 0;
@@ -12,6 +11,6 @@ function gen_fibonacii(number) {
     value2 = sum;
     start++;
   }
-}
+};
 
 gen_fibonacii(10);

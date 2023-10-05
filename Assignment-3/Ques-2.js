@@ -5,7 +5,7 @@
 // 4 5 6
 // 7 8 9 10
 
-function pattern1() {
+const pattern1 = () => {
   let value = 1;
   let lines = 1;
   while (lines < 5) {
@@ -18,14 +18,14 @@ function pattern1() {
     lines++;
     console.log(ans.trim());
   }
-}
+};
 
 // 1
 // 2 2
 // 3 3 3
 // 4 4 4 4
 
-function pattern2() {
+const pattern2 = () => {
   let value = 1;
   let lines = 1;
   while (lines < 5) {
@@ -38,7 +38,7 @@ function pattern2() {
     lines++;
     console.log(ans.trim());
   }
-}
+};
 
 // 1 2 3 4 5
 // 1 2 3 4
@@ -50,7 +50,7 @@ function pattern2() {
 // 1 2 3 4
 // 1 2 3 4 5
 
-function pattern3() {
+const pattern3 = () => {
   let lines = 1;
   let end = 5;
   while (lines < 10) {
@@ -70,7 +70,7 @@ function pattern3() {
     console.log(ans);
     lines++;
   }
-}
+};
 
 pattern1();
 console.log();

@@ -1,6 +1,6 @@
 // 1. Write a program to perform functionality of a calculator (add,sub,multiply,divide)
 
-function calculator(value1, value2, operator) {
+const calculator = (value1, value2, operator) => {
   switch (operator) {
     case "+":
       return value1 + value2;
@@ -17,7 +17,7 @@ function calculator(value1, value2, operator) {
     default:
       return "Wrong input";
   }
-}
+};
 
 const ans = calculator(3, 4, "+");
 console.log(ans);

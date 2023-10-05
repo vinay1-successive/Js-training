@@ -2,12 +2,12 @@
 
 const twice_of_number = (num) => 2 * num;
 
-function twice_Generator() {
-  let i = 1;
+const twice_Generator = (i) => {
   while (twice_of_number(i) <= 4096) {
-    i = twice_of_number(i);
     console.log(i);
+    i = twice_of_number(i);
   }
-}
+  console.log(i);
+};
 
-twice_Generator();
+twice_Generator(3);

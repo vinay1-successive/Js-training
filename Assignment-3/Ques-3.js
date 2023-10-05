@@ -9,7 +9,7 @@
 //     *  *  *
 //      *  *
 //        *
-function Pattern() {
+const Pattern = () => {
   let lines = 1;
   let space = 4;
   let end = 1;
@@ -39,6 +39,6 @@ function Pattern() {
     console.log(ans);
     lines++;
   }
-}
+};
 
 Pattern();
