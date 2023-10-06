@@ -1,7 +1,7 @@
 // 4. Write a function expression that takes in a number and returns its square.
 
-function get_square(num) {
+function getSquare(num) {
   return num * num;
 }
-const square = get_square(20);
+const square = getSquare(20);
 console.log(square);
