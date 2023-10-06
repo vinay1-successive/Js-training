@@ -11,33 +11,32 @@
     <div id="user-info"></div>
 
     <script>
-      const validateInfo = (input, ch) => {
-        if (ch == 2) {
+      const validateInfo = (input, choice) => {
+        if (choice === "Enter Age: ") {
           return !isNaN(input) && input >= 1 && input <= 100;
         }
 
-        if (ch == 1) {
+        if (choice === "Enter name: ") {
           return /^[A-Za-z\s]+$/.test(input);
         }
-        if (ch == 3) {
+        if (choice === "Enter Phone (10 digits only): ") {
           return /^\d{10}$/.test(input);
         }
       };
 
-      const getUserInput = (promptMessage, validator, ch) => {
+      const getUserInput = (promptMessage, validator) => {
         let userInput;
         do {
           userInput = prompt(promptMessage);
-        } while (!validator(userInput, ch));
+        } while (!validator(userInput, promptMessage));
         return userInput;
       };
 
-      const firstName = getUserInput("Enter name: ", validateInfo, 1);
-      const age = getUserInput("Enter Age: ", validateInfo, 2);
+      const firstName = getUserInput("Enter name: ", validateInfo);
+      const age = getUserInput("Enter Age: ", validateInfo);
       const phone = getUserInput(
         "Enter Phone (10 digits only): ",
-        validateInfo,
-        3
+        validateInfo
       );
 
       const userInfoBox = document.getElementById("user-info");
