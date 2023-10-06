@@ -10,4 +10,4 @@ const generateTwice = (i) => {
   console.log(i);
 };
 
-generateTwice(3);
+generateTwice(2);

@@ -4,13 +4,16 @@ const generateFibonacii = (number) => {
   let value2 = 1;
   let sum = 0;
   let start = 0;
+  let arr = [];
   while (start < number) {
-    console.log(value1);
+    arr.push(value1);
     sum = value1 + value2;
     value1 = value2;
     value2 = sum;
     start++;
   }
+  return arr;
 };
 
-generateFibonacii(10);
+const ans = generateFibonacii(10);
+console.log(ans);

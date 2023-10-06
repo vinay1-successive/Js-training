@@ -43,3 +43,9 @@ do {
   j++;
 } while (j <= 20);
 console.log(ans4);
+
+const ans5 = arr.map((element) => element);
+console.log(ans5);
+
+const ans6 = arr.filter((element) => element % 2 == 0);
+console.log(ans6);
