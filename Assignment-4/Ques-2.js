@@ -5,9 +5,9 @@ const reverseString = (str) => {
 
   arr.forEach((element) => {
     let reversed = "";
-    for (let i = 0; i < element.length; i++) {
-      reversed = element.charAt(i) + reversed;
-    }
+    Array.from(element).forEach((char) => {
+      reversed = char + reversed;
+    });
     finalString += reversed + " ";
   });
   return finalString.trim();

@@ -1,5 +1,4 @@
 // 10. Write a program to concatenate an input of array of arrays
-
 const arr = [2, [3, [4, 5]]];
 
 const calculateSum = (arr) => {
@@ -10,3 +9,5 @@ const calculateSum = (arr) => {
 
 const ans = calculateSum(arr);
 console.log(ans);
+// Using Array.flat();
+console.log(arr.flat(3));

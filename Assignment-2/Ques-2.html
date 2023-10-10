@@ -1,0 +1,55 @@
+<!-- // 2. Write a program to take input(age, name, phone no.) from user and display it -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Information</title>
+  </head>
+  <body>
+    <div id="user-info"></div>
+
+    <script>
+      const validateInfo = (input, choice) => {
+        if (choice === "Enter Age: ") {
+          return !isNaN(input) && input >= 1 && input <= 100;
+        }
+
+        if (choice === "Enter name: ") {
+          return /^[A-Za-z\s]+$/.test(input);
+        }
+        if (choice === "Enter Phone (10 digits only): ") {
+          return /^\d{10}$/.test(input);
+        }
+      };
+
+      const getUserInput = (promptMessage, validator) => {
+        let userInput;
+        do {
+          userInput = prompt(promptMessage);
+        } while (!validator(userInput, promptMessage));
+        return userInput;
+      };
+
+      const firstName = getUserInput("Enter name: ", validateInfo);
+      const age = getUserInput("Enter Age: ", validateInfo);
+      const phone = getUserInput(
+        "Enter Phone (10 digits only): ",
+        validateInfo
+      );
+
+      const userInfoBox = document.getElementById("user-info");
+      const nameElement = document.createElement("div");
+      nameElement.textContent = "Name: " + firstName;
+      const ageElement = document.createElement("div");
+      ageElement.textContent = "Age: " + age;
+      const phoneElement = document.createElement("div");
+      phoneElement.textContent = "Phone: " + phone;
+
+      userInfoBox.appendChild(nameElement);
+      userInfoBox.appendChild(ageElement);
+      userInfoBox.appendChild(phoneElement);
+    </script>
+  </body>
+</html>
