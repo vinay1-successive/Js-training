@@ -3,15 +3,15 @@
 const arr = [2, 3, 4, 5, 7, 3, 1, 3];
 
 const bubbleSort = (arr) => {
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] >= arr[j]) {
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+  arr.forEach((element1, index1, arr) => {
+    arr.forEach((element2, index2, arr) => {
+      if (arr[index1] < arr[index2]) {
+        let temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
       }
-    }
-  }
+    });
+  });
   return arr;
 };
 

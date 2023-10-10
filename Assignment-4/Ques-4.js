@@ -28,3 +28,7 @@ const toLowerCase = (string) => {
 
 const lowerCaseAns = toLowerCase("Vinay");
 console.log(lowerCaseAns);
+
+// Using Built In Funtions
+console.log("Vinay".toUpperCase());
+console.log("Vinay".toLowerCase());

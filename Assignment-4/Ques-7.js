@@ -1,14 +1,10 @@
 // 7. Write a program to find index of duplicate elements in an array
-
 const arr = [1, 2, 1, 2, 3, 4, 5, 3];
-
-const calculateSum = (arr) => {
-  let ans = arr.map((value, index) => {
-    return arr.lastIndexOf(value) - arr.indexOf(value) > 0 ? index : undefined;
+const findDuplicateIndex = (arr) => {
+  let result = [];
+  arr.forEach((element, index) => {
+    if (arr.lastIndexOf(element) - arr.indexOf(element)) result.push(index);
   });
-  ans = ans.filter((element) => element != undefined);
-  return ans;
+  return result;
 };
-
-const ans = calculateSum(arr);
-console.log(ans);
+console.log(findDuplicateIndex(arr));

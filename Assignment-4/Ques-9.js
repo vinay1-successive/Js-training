@@ -1,23 +1,12 @@
 // 9. Write a program to find the last duplicate index in an array
 
 const arr = [1, 2, 1, 2, 3, 4, 5, 3];
-
-const calculateSum = (arr) => {
-  let ans = [];
-  let val = [];
-  ans = arr.map((value, index) => {
-    if (
-      arr.lastIndexOf(value) - arr.indexOf(value) > 0 &&
-      !val.includes(value)
-    ) {
-      val.push(value);
-      return arr.lastIndexOf(value);
-    }
-    return undefined;
+const map = {};
+const lastDuplicateIndex = (arr) => {
+  arr.forEach((element, index) => {
+    map[element] = map.hasOwnProperty(element) ? index : -1;
   });
-  ans = ans.filter((element) => element != undefined);
-  return ans;
+  return Object.values(map).filter((element) => element > 0);
 };
-
-const ans = calculateSum(arr);
+const ans = lastDuplicateIndex(arr);
 console.log(ans);

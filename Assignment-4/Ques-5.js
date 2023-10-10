@@ -1,9 +1,6 @@
 // 5. Write a program to convert given string in camel case ("hello john doe" => helloJohnDoe)
 
-const isAlphanumeric = (str) => {
-  return /^[a-zA-Z0-9]+$/.test(str);
-};
-
+const isAlphanumeric = (str) => /^[a-zA-Z0-9]+$/.test(str);
 const camelCase = (word) => {
   let finalString = "";
   word = word.trim();
