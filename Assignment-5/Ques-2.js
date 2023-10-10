@@ -15,7 +15,7 @@ const person = [
   {
     name: "Dheeraj",
     age: 53,
-  },
+  }, 
 ];
 
 person.sort((a, b) => {

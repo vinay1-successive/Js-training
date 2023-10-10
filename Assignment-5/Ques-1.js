@@ -7,6 +7,6 @@ const person = {
     return "Hello";
   },
 };
-for (const key in person) {
-  console.log(typeof person[key] == "function" ? person[key]() : person[key]);
-}
+Object.keys(person).forEach((key) =>
+  console.log(typeof person[key] == "function" ? person[key]() : person[key])
+);
