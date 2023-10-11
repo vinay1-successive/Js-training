@@ -8,3 +8,4 @@ const calculateSum = (arr) => {
 
 const ans = calculateSum(arr);
 console.log(ans);
+ 

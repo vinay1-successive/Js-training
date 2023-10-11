@@ -27,3 +27,4 @@ person.forEach((element) => {
   delete element.id;
 });
 console.log(person);
+ 

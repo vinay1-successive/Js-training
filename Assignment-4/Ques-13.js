@@ -13,3 +13,4 @@ const createInverse = (arr) => {
 
 const ans = createInverse(arr);
 console.log(ans);
+ 

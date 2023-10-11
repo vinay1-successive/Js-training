@@ -1,16 +1,13 @@
 // 8. Write a program to remove dupliacte elements from an array
-
 const arr = [1, 2, 1, 2, 3, 4, 5, 3];
-
-const calculateSum = (arr) => {
-  let ans = [];
-  arr.filter((value) => {
-    if (!ans.includes(value)) {
-      ans.push(value);
+const removeDuplicate = (arr) => {
+  let result = [];
+  arr.forEach((value) => {
+    if (!result.includes(value)) {
+      result.push(value);
     }
   });
-  return ans;
+  return result;
 };
-
-const ans = calculateSum(arr);
+const ans = removeDuplicate(arr);
 console.log(ans);

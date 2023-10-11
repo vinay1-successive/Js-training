@@ -11,7 +11,7 @@ const deepClone = (obj) => {
 
   let copy = Array.isArray(obj) ? [] : {};
   for (const key in obj) {
-    if (Object.hasOwnProperty.call(obj, key)) {
+    if (obj.hasOwnProperty(key)) {
       copy[key] = deepClone(obj[key]);
     }
   }
@@ -40,3 +40,5 @@ const obj = {
 };
 
 console.log(deepClone(obj));
+// Using inbuilt Funtion
+console.log(JSON.parse(JSON.stringify(obj)));

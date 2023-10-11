@@ -51,3 +51,4 @@ const flattenObject = (obj, previousKey = "") => {
 
 console.log(obj);
 console.log(flattenObject(obj));
+
