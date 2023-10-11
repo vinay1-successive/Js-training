@@ -1,0 +1,18 @@
+<!-- 1. Give an example of using a callback function to handle an asynchronous operation in JavaScript (Use any open api to make a call) -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const url = "https://catfact.ninja/fact";
+    async function getData(callBack) {
+      const response = await fetch(url).then((data) => data.json());
+      callBack(response);
+    }
+    const callBack = (data) => console.log(data);
+    getData(callBack);
+  </script>
+</html>
