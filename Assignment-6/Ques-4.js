@@ -1,28 +1,69 @@
 // 4. Create a class called `Person` that has properties for `firstName`, `lastName`, and `age`. The class should also have a method called `fullName` that returns the person's full name.Additionally, the class should have a method called `averageAge` that takes in an array of `Person` objects and returns the average age of all the people in the array.
 
 class Person {
+  #firstName;
+  #lastName;
   constructor(firstName, lastName, age) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
+    if (firstName === "" || firstName == null) {
+      throw new Error("Invalid Input");
+    } else {
+      this.#firstName = firstName;
+    }
+    if (lastName === "" || lastName == null) {
+      throw new Error("Invalid Input");
+    } else {
+      this.#lastName = lastName;
+    }
+    this.age = this.cheackValue(age) ? age : console.log("Invalid Age");
   }
-
+  cheackValue(value) {
+    if (value == null || value <= 0 || typeof value === "string") {
+      return false;
+    }
+    return true;
+  }
   fullName() {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this.#firstName} ${this.#lastName}`;
   }
   averageAge(arr) {
     let avgAge = 0;
+
     arr.forEach((element) => {
+      if (typeof element.age === "string") {
+        throw new Error("Invalid");
+      }
       avgAge += element.age;
     });
     return avgAge / arr.length;
   }
 }
-const obj = new Person();
-const obj1 = new Person("Vinay", "Tomar", 22);
-const obj2 = new Person("Vinay1", "Tomar1", 62);
-const obj3 = new Person("Vinay2", "Tomar2", 32);
-const obj4 = new Person("Vinay3", "Tomar3", 12);
-const obj5 = new Person("Vinay4", "Tomar4", 72);
 
-console.log(obj.averageAge([obj1, obj2, obj3, obj4, obj5]));
+try {
+  const obj = new Person("Vinay", "Tomar", 22);
+  console.log(obj.fullName());
+  const person = [
+    {
+      firstName: "Vinay",
+      lastName: "Tomar",
+      age: 33,
+    },
+    {
+      firstName: "Vinay",
+      lastName: "Tomar",
+      age: 23,
+    },
+    {
+      firstName: "Vinay",
+      lastName: "Tomar",
+      age: 64,
+    },
+    {
+      firstName: "Vinay",
+      lastName: "Tomar",
+      age: 32,
+    },
+  ];
+  console.log(obj.averageAge(person));
+} catch (error) {
+  console.log("Invalid input");
+}

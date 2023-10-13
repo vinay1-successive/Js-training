@@ -4,8 +4,14 @@ class Shape {
   #width;
   #height;
   constructor(width, height) {
-    this.#width = width;
-    this.#height = height;
+    this.#width = this.cheackValue(width) ? width : console.log("Invalid");
+    this.#height = this.cheackValue(height) ? height : console.log("Invalid");
+  }
+  cheackValue(value) {
+    if (value == null || value <= 0 || typeof value === "string") {
+      return false;
+    }
+    return true;
   }
   setWidth(width) {
     if (width <= 0) {
