@@ -1,0 +1,20 @@
+<!-- 2. Give an example of using multiple callback functions in a single function in JavaScript -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const url = "https://catfact.ninja/fact";
+    async function getData(callBack1, callBack2) {
+      const response = await fetch(url).then((data) => data.json());
+      callBack1(response);
+      callBack2(response);
+    }
+    const callBack1 = (data) => console.log(data);
+    const callBack2 = (data) => console.log(data.fact);
+    getData(callBack1, callBack2);
+  </script>
+</html>
