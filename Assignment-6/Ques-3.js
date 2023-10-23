@@ -5,12 +5,29 @@ class Person {
   #gender;
   #interests;
   constructor(name, age, gender, interests) {
-    this.#name = name;
-    this.#age = age;
-    this.#gender = gender;
-    this.#interests = interests;
+    this.#name = this.cheackStringValue(name)
+      ? name
+      : console.log("Invalid Name");
+    this.#age = this.cheackValue(age) ? age : console.log("Invalid Age");
+    this.#gender = this.cheackStringValue(gender)
+      ? gender
+      : console.log("Invalid gender");
+    this.#interests = this.cheackStringValue(interests)
+      ? interests
+      : console.log("Invalid interests");
   }
-
+  cheackValue(value) {
+    if (value == null || value <= 0 || typeof value === "string") {
+      return false;
+    }
+    return true;
+  }
+  cheackStringValue(value) {
+    if (value === "" || value == null) {
+      return false;
+    }
+    return true;
+  }
   setName(name) {
     if (name === "") {
       throw "Name Cannot Be Null";
@@ -51,10 +68,10 @@ class Person {
   greeting() {
     return `Hello my name is ${this.#name} and i am ${
       this.#age
-    } old and my gender is ${this.#gender} and i like ${this.#interests}`;
+    } years old and my gender is ${this.#gender} and i like ${this.#interests}`;
   }
   farewell() {
-    return `Farewell ${this.#name}`;
+    return `Goodbye ${this.#name}`;
   }
 }
 
@@ -64,11 +81,13 @@ class Student extends Person {
   #studies;
   constructor(name, age, gender, interests, studies) {
     super(name, age, gender, interests);
-    this.#studies = studies;
+    this.#studies = this.cheackStringValue(studies)
+      ? studies
+      : console.log("Invalid subject");
   }
 
   greeting() {
-    return `Hello my name is ${this.getName()} and i am ${this.getAge()} old and my gender is ${this.getGender()} and i like ${this.getInterests()} and i am studing ${
+    return `Hello my name is ${this.getName()} and i am ${this.getAge()} year old and my gender is ${this.getGender()} and i like ${this.getInterests()} and i am studing ${
       this.#studies
     }`;
   }
@@ -83,7 +102,11 @@ class Teacher extends Person {
   #subjectsTaught;
   constructor(name, age, gender, interests, subjectsTaught) {
     super(name, age, gender, interests);
-    this.#subjectsTaught = subjectsTaught;
+    if (subjectsTaught == null || subjectsTaught.length == 0) {
+      console.log("Invalid Input");
+    } else {
+      this.#subjectsTaught = subjectsTaught;
+    }
   }
 
   farewell() {
@@ -91,9 +114,5 @@ class Teacher extends Person {
   }
 }
 
-const Obj3 = new Teacher("Vinay", 22, "male", "Cricket", [
-  "Maths",
-  "Physics",
-  "Chemistry",
-]);
+const Obj3 = new Teacher("Vinay", 22, "male", "Cricket", ["Maths", "Physics"]);
 console.log(Obj3.farewell());

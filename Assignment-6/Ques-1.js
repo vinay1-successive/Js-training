@@ -5,12 +5,17 @@ class BankAccount {
   #owner;
   constructor(balance, owner) {
     this.#balance = balance;
-    this.#owner = owner;
-    console.log(`Welcome ${this.#owner}`);
+    if (owner === "" || owner == null) {
+      throw new Error("Invalid input");
+    } else {
+      this.#owner = owner;
+      console.log(`Welcome ${this.#owner}`);
+    }
   }
+  checkName() {}
   deposit = (amount) => {
-    if (amount <= 0) {
-      console.log("Invalid Amount!!");
+    if (amount == null || amount <= 0 || typeof amount === "string") {
+      throw new Error("Invalid Amount!!");
     } else {
       this.#balance += amount;
       console.log("Deposit Successfull");
@@ -18,12 +23,16 @@ class BankAccount {
     }
   };
   withdraw = (amount) => {
-    if (amount > this.#balance) {
-      console.log("Low Balance!!");
+    if (amount == null || typeof amount === "string" || amount <= 0) {
+      throw new Error("Invalid Amount");
     } else {
-      this.#balance -= amount;
-      console.log("Withdrawal Successfull");
-      this.displayBalance(this.#balance);
+      if (amount > this.#balance) {
+        console.log("Low Balance!!");
+      } else {
+        this.#balance -= amount;
+        console.log("Withdrawal Successfull");
+        this.displayBalance(this.#balance);
+      }
     }
   };
   displayBalance = () => {
@@ -31,6 +40,10 @@ class BankAccount {
   };
 }
 
-const Obj1 = new BankAccount(100000, "Vinay");
-Obj1.deposit(122);
-Obj1.withdraw(100000);
+try {
+  const Obj1 = new BankAccount(100000, "Vinay");
+  Obj1.deposit(1000);
+  Obj1.withdraw(100000);
+} catch {
+  console.log("Invalid input");
+}
